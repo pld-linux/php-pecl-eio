@@ -2,11 +2,11 @@
 Summary:	Extension to provide interface to the libeio library
 Name:		php-pecl-%{modname}
 Version:	1.2.0
-Release:	0.1
+Release:	1
 License:	PHP 3.01
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
-# Source0-md5:	18505c41fb1ca2a2b5024c50c0de719f
+# Source0-md5:	e833c3927e2ebb5b54791cb89a364346
 URL:		http://pecl.php.net/package/eio
 BuildRequires:	libeio-devel
 BuildRequires:	php-devel >= 4:5.3.0
@@ -18,10 +18,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This extension provides interface to the libeio library.
 
 Libeio is a an asynchronous I/O library. Features basically include
-asynchronous versions of POSIX API(read, write, open, close, stat, unlink,
-fdatasync, mknod, readdir etc.); sendfile (native on Solaris, Linux, HP-UX,
-FreeBSD); readahead. libeio itself emulates the system calls, if they are not
-available on specific(UNIX-like) platform.
+asynchronous versions of POSIX API(read, write, open, close, stat,
+unlink, fdatasync, mknod, readdir etc.); sendfile (native on Solaris,
+Linux, HP-UX, FreeBSD); readahead. libeio itself emulates the system
+calls, if they are not available on specific(UNIX-like) platform.
 
 %prep
 %setup -qc
@@ -57,6 +57,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc CREDITS
+%doc CREDITS EXPERIMENTAL INSTALL LICENSE README TODO
 %config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/%{modname}.ini
 %attr(755,root,root) %{php_extensiondir}/%{modname}.so
