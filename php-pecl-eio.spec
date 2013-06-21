@@ -1,8 +1,9 @@
 # TODO
 # - compile with system libeio
+%define		php_name	php%{?php_suffix}
 %define		modname	eio
 Summary:	Extension to provide interface to the libeio library
-Name:		php-pecl-%{modname}
+Name:		%{php_name}-pecl-%{modname}
 Version:	1.2.0
 Release:	1
 License:	PHP 3.01
@@ -10,9 +11,9 @@ Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
 # Source0-md5:	e833c3927e2ebb5b54791cb89a364346
 URL:		http://pecl.php.net/package/eio
+BuildRequires:	%{php_name}-devel >= 4:5.3.0
 #BuildRequires:	libeio-devel
-BuildRequires:	php-devel >= 4:5.3.0
-BuildRequires:	rpmbuild(macros) >= 1.519
+BuildRequires:	rpmbuild(macros) >= 1.650
 %{?requires_php_extension}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
