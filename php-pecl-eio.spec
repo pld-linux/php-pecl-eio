@@ -5,7 +5,7 @@
 Summary:	Extension to provide interface to the libeio library
 Name:		%{php_name}-pecl-%{modname}
 Version:	1.2.0
-Release:	1
+Release:	2
 License:	PHP 3.01
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
@@ -15,6 +15,7 @@ BuildRequires:	%{php_name}-devel >= 4:5.3.0
 #BuildRequires:	libeio-devel
 BuildRequires:	rpmbuild(macros) >= 1.650
 %{?requires_php_extension}
+Provides:	php(%{modname}) = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
