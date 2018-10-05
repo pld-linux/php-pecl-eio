@@ -4,12 +4,12 @@
 %define		modname	eio
 Summary:	Extension to provide interface to the libeio library
 Name:		%{php_name}-pecl-%{modname}
-Version:	1.2.0
-Release:	2
+Version:	2.0.4
+Release:	1
 License:	PHP 3.01
-Group:		Development/Languages/PHP
+Group:		GDevelopment/Languages/PHP
 Source0:	http://pecl.php.net/get/%{modname}-%{version}.tgz
-# Source0-md5:	e833c3927e2ebb5b54791cb89a364346
+# Source0-md5:	6998917ed302ff4ddfb05f97dc5d089d
 URL:		http://pecl.php.net/package/eio
 BuildRequires:	%{php_name}-devel >= 4:5.3.0
 #BuildRequires:	libeio-devel
@@ -64,6 +64,6 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc CREDITS EXPERIMENTAL INSTALL LICENSE README TODO
+%doc CREDITS INSTALL.md LICENSE README.md
 %config(noreplace) %verify(not md5 mtime size) %{php_sysconfdir}/conf.d/%{modname}.ini
 %attr(755,root,root) %{php_extensiondir}/%{modname}.so
